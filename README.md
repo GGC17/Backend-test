@@ -36,7 +36,7 @@ sh deploy-rds.sh
 ```bash
 RDS_HOST='***RDS_ENDPOINT***'
 ```
-![alt text](image-1.png)
+![alt text](img/image-1.png)
 
 4. Run the script to deploy the Flask app locally, with Docker
 ```bash
@@ -53,7 +53,8 @@ sh run-unittests.sh
     GET /orders/{id} – Fetch details of a specific order.
     GET /orders – List all orders.
     DELETE /orders/{id} – Cancel/delete an order.
-![alt text](image-2.png)
+    
+![alt text](img/image-2.png)
 
 7. At the end, destroy the db instance and sg created in aws using (remember, terminals were changed, it will be needed to export the AWS keys):
 ```bash
