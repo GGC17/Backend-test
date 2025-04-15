@@ -1,0 +1,1 @@
+docker exec -it api python -m pytest . --full-trace -vv --cov-config=.coveragerc --cov-report term-missing  --cov=.
