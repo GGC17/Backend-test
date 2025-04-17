@@ -168,3 +168,4 @@ terraform.tfstate
 .terraform
 terraform.tfstate.backup
 secret.tfvars
+.terraform.tfstate.lock.info
