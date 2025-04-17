@@ -38,12 +38,12 @@ RDS_HOST='***RDS_ENDPOINT***'
 ```
 ![alt text](img/image-1.png)
 
-4. Run the script to deploy the Flask app locally, with Docker
+4. Run the script to deploy the Flask app locally, with Docker. This will create a Docker container in detached mode.
 ```bash
 sh deploy-app.sh
 ```
 
-5. Run unittests in another terminal
+5. To run unittests:
 ```bash
 sh run-unittests.sh
 ```
@@ -53,10 +53,10 @@ sh run-unittests.sh
     GET /orders/{id} – Fetch details of a specific order.
     GET /orders – List all orders.
     DELETE /orders/{id} – Cancel/delete an order.
-    
+
 ![alt text](img/image-2.png)
 
-7. At the end, destroy the db instance and sg created in aws using (remember, terminals were changed, it will be needed to export the AWS keys):
+7. At the end, destroy the db instance and SG created in aws using: (if terminals were changed, it will be needed to export the AWS keys)
 ```bash
 cd terraform
 terraform destroy -var-file="secret.tfvars"
@@ -67,7 +67,8 @@ It will prompt: type 'yes'
 ## 4. Other considerations
 - it would be correct to create a table of Products to create a relation with ProductId in the table orders
 - it would be correct to create a table of Users to create a relation with UserId in the table orders
-- authentication was implemented with a simple token, but should be stronger, eg use Cognito, JWT token, SSO
-- the db created is publicly accessible. this is a security issue, but was made the avoid the operational overhead of creating VPCs, Subnets, SGs, etc
+- on the GET /orders and /orders/{id} each user should only see all of his own orders, or an order by id made by him (here we only have one user). An admin user could get everything
+- authentication was implemented with a simple token, but should be stronger, eg use Cognito, SSO
+- the db created in aws is publicly accessible. this is a security issue, but was made the avoid the operational overhead of creating VPCs, Subnets, SGs, etc
 - in order to avoid resources consumption, pagination and rate limiting should be implemented in the API
-- api versioning should be implemented, for better control
+- api versioning should be implemented, for better control and rollbacks if needed

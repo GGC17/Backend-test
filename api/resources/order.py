@@ -40,6 +40,9 @@ class Order(Resource):
 
         """
         Endpoint to list all orders.
+        ***Should filter by user's orders
+        Admin can view all orders
+        ***
 
         :returns: Flask response
         """
@@ -58,6 +61,9 @@ class OrderById(Resource):
 
         """
         Endpoint to get order by id.
+        ***Should filter by user's order
+        Admin can view any order by id
+        ***
 
         :returns: Flask response
         """

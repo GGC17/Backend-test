@@ -30,7 +30,7 @@ with app.app_context():
     try:
         db.create_all()
     except Exception:
-        print("Skipping, tables already created")
+        pass
 
 # Home
 app.before_request(validAuth)
