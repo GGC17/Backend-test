@@ -1,6 +1,6 @@
 # Simple Backend Test - Instructions to deploy database in AWS and API locally
 
-We will deploy a Postgres RDS instance in AWS, and a Flask API locally with Docker, in order to avoid operational overhead in aws. This will require a little more manual configuration, explained in the next points.
+We will deploy a Postgres RDS instance in AWS, and a Flask API locally with Docker, in order to avoid operational overhead in aws. Because of this, it will be required a little more manual configuration, explained in the next points.
 
 ## 0. Contents
 
